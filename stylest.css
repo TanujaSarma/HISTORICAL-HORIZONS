@@ -7,7 +7,7 @@ box-sizing: border-box;
 body {
     color: white;
     font-family: 'Arial', sans-serif;
-    background-image: url('/home/kirishimeoo/Documents/Historical Horizons/hh2.jpeg');
+    background-image: url('hh2.jpeg');
     background-size: cover;
     backdrop-filter: blur(2px);
 }
