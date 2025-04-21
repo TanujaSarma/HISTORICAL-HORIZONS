@@ -1,0 +1,158 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rate Your Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 6.25vmax;
+    }
+
+    @media (max-width: 992px) {
+      html {
+        font-size: 60px;
+      }
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 0.5rem;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.24rem;
+      color: #222;
+      background-image: url('hh2.jpeg');
+      backdrop-filter: blur(8px);
+    }
+
+    .wrapper {
+      width: 6rem;
+      padding: 0.3rem 0.6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      background-color: white;
+      border-radius: 0.25rem;
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .wrapper .title {
+      font-size: 0.36rem;
+      font-weight: bold;
+    }
+
+    .wrapper .content {
+      color: #555;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .rate-box {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 0.1rem;
+    }
+
+    .rate-box input {
+      display: none;
+    }
+
+    .rate-box .star:before {
+      content: "★";
+      font-family: "Potta One", cursive;
+      font-size: 0.6rem;
+      display: inline-block;
+      cursor: pointer;
+      color: #0000;
+      text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+      background-color: #aaa;
+      background-clip: text;
+      -webkit-background-clip: text;
+      transition: all 0.3s;
+    }
+
+    .rate-box input:hover ~ .star:before {
+      color: rgba(255, 204, 51, 0.5);
+    }
+
+    .rate-box input:active + .star:before {
+      transform: scale(0.9);
+    }
+
+    .rate-box input:checked ~ .star:before {
+      color: #ffcc33;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3),
+                   -3px -3px 8px rgba(255, 255, 255, 0.8);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.2rem;
+      border: none;
+      border-radius: 0.2rem;
+      resize: none;
+      color: inherit;
+      font-family: inherit;
+      line-height: 1.5;
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.3),
+                  inset -2px -2px 8px rgba(255, 255, 255, 0.8);
+    }
+
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    textarea:focus {
+      outline-color: #ffcc33;
+    }
+
+    .submit-btn {
+      padding: 0.2rem 0.5rem;
+      background-color: rgba(255, 204, 51, 0.8);
+      border-radius: 1rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3),
+                  -3px -3px 8px rgba(255, 255, 255, 0.8);
+      transition: all 0.2s;
+    }
+
+    .submit-btn:active {
+      transform: translate(2px, 2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title">Rate your experience</div>
+    <div class="content">
+      We highly value your feedback! Kindly take a moment to rate your experience and provide us with your valuable feedback.
+    </div>
+    <div class="rate-box">
+      <input type="radio" name="star" id="star0">
+      <label class="star" for="star0"></label>
+      <input type="radio" name="star" id="star1">
+      <label class="star" for="star1"></label>
+      <input type="radio" name="star" id="star2" checked>
+      <label class="star" for="star2"></label>
+      <input type="radio" name="star" id="star3">
+      <label class="star" for="star3"></label>
+      <input type="radio" name="star" id="star4">
+      <label class="star" for="star4"></label>
+    </div>
+    <textarea placeholder="Leave your feedback here..."></textarea>
+    <button class="submit-btn">Submit</button>
+  </div>
+</body>
+</html>
