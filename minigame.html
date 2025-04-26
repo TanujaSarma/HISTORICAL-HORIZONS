@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Image Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+     background-image: url('hh2.jpeg');
+    background-size: cover;
+    backdrop-filter: blur(2px);
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+    color: white;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #000;
+    }
+
+    .description {
+      max-width: 800px;
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+
+      box-shadow: 0px 0px 20px black;
+    }
+
+    .gallery {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      width: 110%;
+      max-width: 1000px;
+       color: white;
+        border: 5px solid white;
+        background: rgba(0,0,0,0.5);
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+   .image-container {
+  position: relative;
+
+  width: 100%;
+  height: 150px;
+  /*overflow: hidden;*/
+  border-radius: 10px;
+  background: white; /* Add white background */
+   backdrop-filter: black;
+  box-sizing: border-box; /* Ensures padding doesn't break size */
+}
+
+    .image-container img {
+
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(8px);
+      transition: filter 0.5s ease;
+       color: white;
+    }
+
+    .options {
+      margin-top: 0.5rem;
+      display: flex;
+      position: relative;
+      right: 35px;
+      gap: 0.5rem;
+
+    }
+
+    .options input[type="radio"] {
+      display: none;
+    }
+
+    .options label {
+    display: inline-block;
+    margin-right : 1px;
+      background: #00adb5;
+      color: white;
+      padding: 0.2rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    ul#remove{
+    list-style-type: none;
+
+    }
+
+    .options label:hover {
+      background: #00777e;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>🎮 Guess the Image</h1>
+  <div class="description">
+    <p>Welcome to the "Guess the Image" mini-game! 🔍</p>
+    <p>There are 4 blurred images. Below each image, you'll find 3 options. Your task is to choose the correct name or identity of the image. If your answer is correct, the image will be revealed!</p>
+    <p>This is a fun way to test your guessing skills!</p>
+  </div>
+
+  <div class="gallery">
+    <!-- Image Cards -->
+    <!-- Image 1 -->
+    <div class="card">
+      <div class="image-container">
+        <img id="img1" src="excavate.jpeg" alt="Hidden Image 1" />
+      </div>
+    </div>
+
+    <!-- Image 2 -->
+    <div class="card">
+      <div class="image-container">
+        <img id="img2" src="lothal.jpeg" alt="Hidden Image 2" />
+      </div>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="card">
+      <div class="image-container">
+        <img id="img3" src="AiravatesvaraTemple.jpeg" alt="Hidden Image 3" />
+      </div>
+    </div>
+
+    <!-- Image 4 -->
+    <div class="card">
+      <div class="image-container">
+        <img id="img4" src="meenakshi.jpeg" alt="Hidden Image 4" />
+      </div>
+    </div>
+
+
+
+ <div class="options">
+      <ul id="remove">
+      <li>  <input type="radio" name="img1" id="img1opt1" onclick="revealImage('img1', false)">
+        <label for="img1opt1"><b>Mehrgarh</b></label></li><br>
+
+        <li><input type="radio" name="img1" id="img1opt2" onclick="revealImage('img1', true)">
+        <label for="img1opt2"><b>Burzahom</b></label></li><br>
+
+        <li><input type="radio" name="img1" id="img1opt3" onclick="revealImage('img1', false)">
+        <label for="img1opt3"><b>Chirand</b></label></li><br>
+        <ul>
+      </div>
+
+ <div class="options">
+      <ul id="remove">
+      <li><input type="radio" name="img2" id="img2opt1" onclick="revealImage('img2', true)">
+        <label for="img2opt1"><b>Lothal</b></label></li><br>
+
+        <li><input type="radio" name="img2" id="img2opt2" onclick="revealImage('img2', false)">
+        <label for="img2opt2"><b>Kalibangan</b></label></li><br>
+
+        <li><input type="radio" name="img2" id="img2opt3" onclick="revealImage('img2', false)">
+        <label for="img2opt3"><b>Dholavira</b></label></li><br>
+        <ul>
+      </div>
+
+
+ <div class="options">
+      <ul id="remove">
+      <li>  <input type="radio" name="img3" id="img3opt1" onclick="revealImage('img3', false)">
+        <label for="img3opt1"><b>Brihadeshwara Temple</b></label></li><br>
+
+        <li><input type="radio" name="img3" id="img3opt2" onclick="revealImage('img3', false)">
+        <label for="img3opt2"><b>Kailasanatha Temple</b></label></li><br>
+
+        <li><input type="radio" name="img3" id="img3opt3" onclick="revealImage('img3', true)">
+        <label for="img3opt3"><b>Airavatesvara Temple</b></label></li><br>
+        <ul>
+      </div>
+
+
+    <div class="options">
+      <ul id="remove">
+      <li>  <input type="radio" name="img4" id="img4opt1" onclick="revealImage('img4', false)">
+        <label for="img4opt1"><b>Ekambareswarar Temple</b></label></li><br>
+
+        <li><input type="radio" name="img4" id="img4opt2" onclick="revealImage('img4', true)">
+        <label for="img4opt2"><b>MeenakshiAmman Temple</b></label></li><br>
+
+        <li><input type="radio" name="img4" id="img4opt3" onclick="revealImage('img4', false)">
+        <label for="img4opt3"><b>KamakshiAmman Temple</b></label></li><br>
+        <ul>
+      </div>
+
+  <script>
+    function revealImage(id, isCorrect) {
+      const img = document.getElementById(id);
+      if (isCorrect) {
+        img.style.filter = 'none';
+      }
+    }
+
+  </script>
+</body>
+</html>
