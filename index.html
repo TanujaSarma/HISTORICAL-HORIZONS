@@ -269,8 +269,35 @@ body {
     text-align: center;
   }
 }
+        /* General responsiveness for search bar */
+.search-bar {
+  max-width: 400px;      /* Prevent it from being too wide on desktop */
+  width: 80%;            /* Responsive width */
+  margin: 0 auto;        /* Center it */
+  display: block;        /* Ensure it's treated as a block element */
+  font-size: 16px;
+}
 
+/* Mobile-specific tweaks */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 70%;
+    max-width: 280px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
 
+  /* Optional: reduce logo size */
+  .logo {
+    max-width: 80px;
+    height: auto;
+  }
+
+  /* Optional: spacing fix for top menu */
+  .top-right {
+    margin-top: 5px;
+  }
+}
 
 
     </style>
