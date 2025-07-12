@@ -270,27 +270,33 @@ body {
   }
 }
         /* Responsive timeline layout */
-/* Timeline responsiveness */
+
 @media (max-width: 768px) {
-  .timeline::after {
-    left: 31px;
+  /* Fix top-right nav items */
+  .top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.6); /* optional for better visibility */
+    border-radius: 8px;
   }
 
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
+  /* Optional: Reduce font size for main heading */
+  h1 {
+    font-size: 24px;
+    text-align: center;
   }
 
-  .container::before {
-    left: 60px;
-    border: medium solid #6b4f3b;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #6b4f3b transparent transparent;
-  }
-
-  .left, .right {
-    left: 0%;
+  .search-bar {
+    width: 90%;
+    margin: 0 auto 10px auto;
+    font-size: 14px;
   }
 }
 
