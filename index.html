@@ -8,23 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
         /* Make images scale on small screens */
-        .timeline-img img {
-  max-width: 100%;
-  height: auto;
-}
 
-.timeline-content {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1rem;
-}
-
-.timeline-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
 
 img {
   max-width: 100%;
@@ -286,25 +270,27 @@ body {
   }
 }
         /* Responsive timeline layout */
+/* Timeline responsiveness */
 @media (max-width: 768px) {
-  .timeline-section {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+  .timeline::after {
+    left: 31px;
   }
 
-  .timeline-img,
-  .timeline-content {
+  .container {
     width: 100%;
-    text-align: center;
+    padding-left: 70px;
+    padding-right: 25px;
   }
 
-  .timeline-content h2 {
-    font-size: 1.5rem;
+  .container::before {
+    left: 60px;
+    border: medium solid #6b4f3b;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #6b4f3b transparent transparent;
   }
 
-  .timeline-content p {
-    font-size: 1rem;
+  .left, .right {
+    left: 0%;
   }
 }
 
