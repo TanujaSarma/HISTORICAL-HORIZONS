@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="stylest.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        /* Make images scale on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+/* Flex container fix for responsiveness */
+.header {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* Navbar links mobile style */
+.navbar a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Responsive layout base */
+.section, .main-section, .card, .content {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 
         body {
             font-family: 'EB Garamond', serif;
@@ -195,6 +228,45 @@
         .dropdown a:hover {
             background-color: #ddd;
         }
+
+        /* For tablets and larger */
+@media (min-width: 768px) {
+  .navbar a {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+
+  .header {
+    flex-wrap: nowrap;
+  }
+
+  .section, .main-section {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .card, .content {
+    width: 50%;
+  }
+}
+
+/* For phones */
+@media (max-width: 600px) {
+  .section, .main-section {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card, .content {
+    width: 100%;
+  }
+
+  h1, h2, h3, p {
+    text-align: center;
+  }
+}
+
     </style>
 
 </head>
