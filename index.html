@@ -8,6 +8,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
         /* Make images scale on small screens */
+        .timeline-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.timeline-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.timeline-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -40,6 +58,7 @@ body {
   box-sizing: border-box;
 }
 
+        
 
         body {
             font-family: 'EB Garamond', serif;
@@ -266,6 +285,29 @@ body {
     text-align: center;
   }
 }
+        /* Responsive timeline layout */
+@media (max-width: 768px) {
+  .timeline-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .timeline-img,
+  .timeline-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .timeline-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 1rem;
+  }
+}
+
 
     </style>
 
